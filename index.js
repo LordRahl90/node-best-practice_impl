@@ -1,6 +1,9 @@
 
 const http=require('http');
+const mongoose=require('mongoose');
+mongoose.connect('mongodb://localhost/todoapi',{useNewUrlParser:true});
 const app=require('./app');
+
 
 
 app.set('port',3500);

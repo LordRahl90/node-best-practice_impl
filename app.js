@@ -5,6 +5,7 @@ const app=express();
 const UserRouter=require('./src/components/user').UserRouter;
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/',(req,res)=>{

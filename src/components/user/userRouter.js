@@ -1,13 +1,24 @@
 const express=require('express');
 const router=express.Router();
+const UserService=require('./userService');
 
-router.get('/',(req,res)=>{
-    res.status(200).json({message:'Hello, Welcome to all users section'});
+router.get('/',async (req,res)=>{
+    const response=await UserService.getUsers();
+    res.status(200).json(response);
 });
 
-router.get('/:id',(req,res)=>{
+router.get('/:id',async (req,res)=>{
     let id=req.params.id;
-    res.json({message:`You just requested for ${id}`});
+
+    try{
+        const response=await UserService.listOneUser(id);
+        res.json(response);
+    }
+    catch(e){
+        return res.status(400).json({
+            error: e
+        });
+    }
 });
 
 module.exports=router;
