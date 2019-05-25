@@ -1,6 +1,6 @@
 const request=require('supertest');
 const expect=require('chai').expect;
-const app=require('../../../../server');
+const app=require('../../../../app');
 
 
 describe("User Integration testing",()=>{

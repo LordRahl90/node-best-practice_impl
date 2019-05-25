@@ -1,6 +1,6 @@
 
 const request =require('supertest');
-const app=require('../../server');
+const app=require('../../app');
 
 describe("Bundled Test",()=>{
 

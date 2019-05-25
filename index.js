@@ -1,6 +1,6 @@
 
 const http=require('http');
-const app=require('./server');
+const app=require('./app');
 
 
 app.set('port',3500);

@@ -2,7 +2,7 @@ const express=require('express');
 const bodyParser=require('body-parser');
 const app=express();
 
-const UserRouter=require('./src/modules/user').UserRouter;
+const UserRouter=require('./src/components/user').UserRouter;
 
 app.use(bodyParser.json());
 
