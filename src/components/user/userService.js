@@ -13,15 +13,26 @@ const UserService={
     async listOneUser(id){
         let user =await User.findOne({_id:id});
         if(user===null){
-            throw "User not found";
+            return {success:false,message:"User not found"};
         }
         return {
+            success: true,
             message:`I found the user with ${id}`,
             data: user
         }
     },
-    createUser(user){
+    async createUser(user){
+        try{
+            let newUser=await User.create(user);
 
+            return {
+                message:'User Created Successfully',
+                data: newUser
+            }
+        }
+        catch(e){
+            throw e;
+        }
     }
 }
 
